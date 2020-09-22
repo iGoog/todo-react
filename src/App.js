@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -9,9 +8,10 @@ function App() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setTodoList(todoList.concat([
+        setTodoList([
+            ...todoList,
             {key: keyGenerator.current++, value: e.target.todoItem.value}
-            ]));
+            ]);
         setTodoItem("");
     }
 
